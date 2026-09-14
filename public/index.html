@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الحاسبة العلمية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <section class="unit">
+      <div class="screen">
+        <div class="screen-top">
+          <span class="mode-tag" id="modeTag">DEG</span>
+          <span class="mem-tag" id="memTag"></span>
+        </div>
+        <div class="expr" id="exprLine">0</div>
+        <div class="result" id="resultLine">&nbsp;</div>
+      </div>
+
+      <div class="keys">
+
+        <div class="row">
+          <button class="k k-mod" data-action="shift" id="shiftBtn">SHIFT</button>
+          <button class="k k-mod" data-action="anglemode" id="angleBtn">DEG</button>
+          <button class="k k-mod" data-action="mc">MC</button>
+          <button class="k k-mod" data-action="mr">MR</button>
+          <button class="k k-mod" data-action="mplus">M+</button>
+        </div>
+
+        <div class="row">
+          <button class="k k-fn" data-primary="sin(" data-shift="asin(" data-label="sin" data-shift-label="sin⁻¹">sin</button>
+          <button class="k k-fn" data-primary="cos(" data-shift="acos(" data-label="cos" data-shift-label="cos⁻¹">cos</button>
+          <button class="k k-fn" data-primary="tan(" data-shift="atan(" data-label="tan" data-shift-label="tan⁻¹">tan</button>
+          <button class="k k-op" data-insert="(">(</button>
+          <button class="k k-op" data-insert=")">)</button>
+        </div>
+
+        <div class="row">
+          <button class="k k-fn" data-primary="log10(" data-shift="10^(" data-label="log" data-shift-label="10ˣ">log</button>
+          <button class="k k-fn" data-primary="log(" data-shift="exp(" data-label="ln" data-shift-label="eˣ">ln</button>
+          <button class="k k-fn" data-primary="sqrt(" data-shift="cbrt(" data-label="√" data-shift-label="∛">√</button>
+          <button class="k k-fn" data-action="square" data-shift-action="cube" data-label="x²" data-shift-label="x³">x²</button>
+          <button class="k k-fn" data-insert="^">xʸ</button>
+        </div>
+
+        <div class="row">
+          <button class="k k-fn" data-insert="pi">π</button>
+          <button class="k k-fn" data-insert="e">e</button>
+          <button class="k k-fn" data-insert="!">n!</button>
+          <button class="k k-fn" data-insert="e" data-exp="true">EXP</button>
+          <button class="k k-fn" data-action="ans">Ans</button>
+        </div>
+
+        <div class="row">
+          <button class="k k-fn" data-insert=" mod ">mod</button>
+          <button class="k k-fn" data-action="percent">%</button>
+          <button class="k k-mod" data-action="mminus">M−</button>
+          <button class="k k-clear" data-action="ac">AC</button>
+          <button class="k k-clear" data-action="del">DEL</button>
+        </div>
+
+        <div class="row">
+          <button class="k k-num" data-insert="7">7</button>
+          <button class="k k-num" data-insert="8">8</button>
+          <button class="k k-num" data-insert="9">9</button>
+          <button class="k k-basic" data-insert="/">÷</button>
+        </div>
+
+        <div class="row">
+          <button class="k k-num" data-insert="4">4</button>
+          <button class="k k-num" data-insert="5">5</button>
+          <button class="k k-num" data-insert="6">6</button>
+          <button class="k k-basic" data-insert="*">×</button>
+        </div>
+
+        <div class="row">
+          <button class="k k-num" data-insert="1">1</button>
+          <button class="k k-num" data-insert="2">2</button>
+          <button class="k k-num" data-insert="3">3</button>
+          <button class="k k-basic" data-insert="-">−</button>
+        </div>
+
+        <div class="row">
+          <button class="k k-num" data-insert="0">0</button>
+          <button class="k k-num" data-insert=".">.</button>
+          <button class="k k-equals" data-action="equals">=</button>
+          <button class="k k-basic" data-insert="+">+</button>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="unit history">
+      <div class="history-head">
+        <h2>السجل</h2>
+        <button id="refreshBtn" class="ghost-btn">تحديث</button>
+      </div>
+      <ul id="historyList"></ul>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
